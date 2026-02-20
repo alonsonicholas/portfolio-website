@@ -1,0 +1,83 @@
+html, body{ /*prevents horizontal scrolling on mobile devices*/
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.container-post{    
+    border-radius: 15px;
+    border: 5px solid #fff;
+    background: #212529;
+}
+.container-about{
+    border-radius: 15px;
+    border: 2px solid #fff;
+    background: #212529;
+    padding: 30px;
+}
+nav {
+    padding-left: 20px;;
+    display: flex;
+    gap: 2rem;
+}
+main { /*deals with actual content on the page*/
+    padding: 20px;
+    color: #fff;
+}
+/* Header styling */
+.header {
+    background-color: #2B3035;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    font-size: 24px;
+    display: inline-block;
+}
+
+#about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 45px;
+    padding-right: 45px;
+    font-size: 18px;
+    padding-top: 100px;
+}
+
+.profile-pic {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    padding: 10px;
+}
+/* Footer styling */
+.footer {
+    width: 100%;
+    background-color: #2B3035;
+    color: #fff;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    font-size: 14px;;
+    height: 20px;
+}
+
+body {
+    background-color: #212529;
+    min-height: 100vh; /*sticks footer to bottom of page*/
+    margin: 0;
+    display: grid; /*sticks footer to bottom of page*/
+    grid-template-rows: auto 1fr auto; /*sticks footer to bottom of page*/
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* Link styling WIP*/
+a:link {
+    color: #fff;
+    text-decoration:none;
+}
+
+a:visited {
+    color: #fff;
+}
