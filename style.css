@@ -2,15 +2,38 @@ html, body{ /*prevents horizontal scrolling on mobile devices*/
     max-width: 100%;
     overflow-x: hidden;
 }
-.container-post{    
+
+#projects {
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.post-image {
+    width: 100%;
+    height: auto;
+}
+
+.container-posts{   
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; 
+    background-color: #2B3035;
     border-radius: 15px;
-    border: 5px solid #fff;
-    background: #212529;
+    padding: 20px;
+    margin: 40px;
+    border: 2px solid #fff;
 }
 .container-about{
     border-radius: 15px;
     border: 2px solid #fff;
-    background: #212529;
+    background: #2B3035;
     padding: 30px;
 }
 nav {
@@ -18,10 +41,7 @@ nav {
     display: flex;
     gap: 2rem;
 }
-main { /*deals with actual content on the page*/
-    padding: 20px;
-    color: #fff;
-}
+
 /* Header styling */
 .header {
     background-color: #2B3035;
@@ -33,13 +53,15 @@ main { /*deals with actual content on the page*/
 }
 
 #about {
+    color: #fff;
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-left: 45px;
     padding-right: 45px;
     font-size: 18px;
-    padding-top: 100px;
+    padding-top: 45px;
+    min-height: 100vh; /*takes up the whole page to separate page into "sections"*/
 }
 
 .profile-pic {
