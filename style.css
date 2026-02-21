@@ -1,57 +1,94 @@
+/*responsiveness*/
 html, body{ /*prevents horizontal scrolling on mobile devices*/
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-#projects {
+
+@media (max-width: 768px) {
+    .container-posts {
+        float: none;
+        margin: 40px auto;
+        width: 90%;
+        max-width: 320px;
+    }
+}
+/*responsiveness*/
+
+/**************************************/
+
+/* CSS RELATED TO PROJECTS SECTION */
+.projects-header {
     color: #fff;
     text-align: center;
-    font-size: 18px;
+    font-size: 40px;
+    margin-bottom: 2px;
 }
 
-.posts {
+.posts-content {
+    color: #fff;
+    text-align: left;
+    padding-left: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    overflow: hidden;
 }
 .post-image {
-    width: 100%;
-    height: auto;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    width: 320px;
+    height: 250px;
 }
 
-.container-posts{   
+.container-posts{ 
+    float: left;
+    width: 320px;
+    height: 600px;  
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem; 
+    grid-template-rows: 1fr 2fr auto;
     background-color: #2B3035;
     border-radius: 15px;
-    padding: 20px;
     margin: 40px;
-    border: 2px solid #fff;
-}
-.container-about{
-    border-radius: 15px;
-    border: 2px solid #fff;
-    background: #2B3035;
-    padding: 30px;
-}
-nav {
-    padding-left: 20px;;
-    display: flex;
-    gap: 2rem;
+    position: relative;
+    
 }
 
-/* Header styling */
-.header {
-    background-color: #2B3035;
+.read-button:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+.read-button{
+    background-color: #4a9eff;
+    align-self: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    bottom: 100px;
+    position: absolute;
+}
+
+.posts-tags {
     color: #fff;
-    padding: 20px;
     text-align: left;
-    font-size: 24px;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 10px;
+    border-top: 1px solid #444;
+    margin-top: auto;
 }
 
+
+/*CSS RELATED TO PROJECTS SECTION */
+
+/**************************************/
+
+/* ABOUT SECTION CSS */
 #about {
     color: #fff;
     display: flex;
@@ -61,7 +98,7 @@ nav {
     padding-right: 45px;
     font-size: 18px;
     padding-top: 45px;
-    min-height: 100vh; /*takes up the whole page to separate page into "sections"*/
+    min-height: 100vh; /*takes up the whole view to separate page into "sections"*/
 }
 
 .profile-pic {
@@ -73,6 +110,34 @@ nav {
     background: linear-gradient(135deg, #1a1a2e, #16213e);
     padding: 10px;
 }
+
+.container-about{
+    border-radius: 15px;
+    border: 2px solid #fff;
+    background: #2B3035;
+    padding: 30px;
+}
+/* ABOUT SECTION CSS */
+
+/**************************************/
+
+/* Header styling */
+.header {
+    background-color: #2B3035;
+    color: #fff;
+    padding: 20px;
+    text-align: left;
+    font-size: 24px;
+    display: inline-block;
+}
+
+nav {
+    padding-left: 20px;;
+    display: flex;
+    gap: 2rem;
+}
+
+
 /* Footer styling */
 .footer {
     width: 100%;
@@ -86,12 +151,81 @@ nav {
 
 body {
     background-color: #212529;
-    min-height: 100vh; /*sticks footer to bottom of page*/
+    min-height: 100vh; 
     margin: 0;
     display: grid; /*sticks footer to bottom of page*/
     grid-template-rows: auto 1fr auto; /*sticks footer to bottom of page*/
     background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
     background-size: 30px 30px;
+}
+
+
+
+/*TAGS*/
+.tag-python {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+.tag-cyber {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+.tag-html {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+.tag-css {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+.tag-hugo {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+
+.tag-lab {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+/*TAGS*/
+
+/**************************************/
+
+/*blog posts*/
+.body-blog {
+    background-color: #212529;
+    min-height: 100vh; 
+    margin: 0;
+    display: grid; /*sticks footer to bottom of page*/
+    grid-template-rows: auto 1fr auto; /*sticks footer to bottom of page*/
+    background-size: 30px 30px;
+}
+
+.image-blog {
+    padding-top: 50px;
+    height: 400px;
+    width: 900px;
+    justify-self: center;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 /* Link styling WIP*/
