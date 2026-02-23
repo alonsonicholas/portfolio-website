@@ -497,6 +497,13 @@ footer {
 /**************************************/
 
 /*blog posts*/
+
+p {
+    color: #fff;
+    text-align: left;
+    font-size: 18px;
+}
+
 .body-blog {
     background-color: #212529;
     margin: 0;
@@ -598,7 +605,7 @@ article {
     margin: 0 auto;
 }
 
-.h1-blog {
+h1 {
     text-align: left;
     align-self: flex-start;
     margin-top: 40px;
@@ -606,35 +613,30 @@ article {
     color: #70B3FF;
 }
 
-.h2-blog {
+h2 {
     text-align: left;
     color: #6bb6ff;
 
 }
 
-.h3-blog {
+h3 {
     text-align: left;
     color: #8ac8ff;
 }
 
-.h4-blog {
+h4 {
     text-align: left;
     color: #a8d8ff;
 
 }
 
-.h5-blog {
+h5 {
     text-align: left;
     color: #c5e5ff;
 }
 
-.p-blog {
-    color: #fff;
-    text-align: left;
-    font-size: 18px;
-}
 
-.ul-blog {
+ul {
     color: #fff;
     text-align: left;
 }
@@ -643,7 +645,7 @@ ul li::marker {
     color: #70B3FF;
 }
 
-.ol-blog {
+ol {
     color: #fff;
     text-align: left;
 }
