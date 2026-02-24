@@ -1,0 +1,12 @@
+projects:
+  - title: "My Website!"
+    description: "Write-up on my personal website project that is still very much in progress."
+    image: "web.png"
+    link: "/blog/test-post"
+    tags:
+      - name: "HTML"
+        class: "tag-html"
+      - name: "CSS"
+        class: "tag-css"
+      - name: "Hugo"
+        class: "tag-hugo"

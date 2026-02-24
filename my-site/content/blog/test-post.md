@@ -11,7 +11,4 @@ This is my first blog post. Here's some content.
 
 First post
 
->where is my styling?
-```
-hello(world)
-```
+Test

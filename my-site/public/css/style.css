@@ -605,7 +605,7 @@ article {
     margin: 0 auto;
 }
 
-h1 {
+h1.h1-blog {
     text-align: left;
     align-self: flex-start;
     margin-top: 40px;

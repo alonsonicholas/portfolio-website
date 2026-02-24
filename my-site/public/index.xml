@@ -13,7 +13,7 @@
       <link>http://localhost:1313/blog/test-post/</link>
       <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/blog/test-post/</guid>
-      <description>&lt;p&gt;This is my first blog post. Here&amp;rsquo;s some content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-section-header&#34;&gt;A Section Header&lt;/h2&gt;&#xA;&lt;p&gt;First post&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;where is my styling?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;hello(world)&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+      <description>&lt;p&gt;This is my first blog post. Here&amp;rsquo;s some content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-section-header&#34;&gt;A Section Header&lt;/h2&gt;&#xA;&lt;p&gt;First post&lt;/p&gt;&#xA;&lt;p&gt;Test&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

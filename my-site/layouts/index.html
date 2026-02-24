@@ -41,21 +41,23 @@
         <section id="projects">
             <h2 class="projects-header">Projects</h2>
             <div class="projects-grid">
+                {{ range .Site.Data.projects.projects }}
                 <div class="container-posts">
                     <div class="post-image">
-                        <img src="web.png" alt="Project 1" class="post-image">
+                        <img src="{{ .image }}" alt="{{ .title }}" class="post-image">
                     </div>
                     <div class="posts-content">
-                        <h3>My Website!</h3>
-                        <p>Write-up on my personal website project that is still very much in progress.</p>
-                        <button onclick='window.location.href="/blog/test-post"' class="read-button">Read more</button>
-                    <div class="posts-tags">
-                        <span class="tag-python">HTML</span>
-                        <span class="tag-css">CSS</span>
-                        <span class="tag-hugo">Hugo</span>
-                    </div>
+                        <h3>{{ .title }}</h3>
+                        <p>{{ .description }}</p>
+                        <button onclick='window.location.href="{{ .link }}"' class="read-button">Read more</button>
+                        <div class="posts-tags">
+                            {{ range .tags }}
+                            <span class="{{ .class }}">{{ .name }}</span>
+                            {{ end }}
+                        </div>
                     </div>
                 </div>
+                {{ end }}
             </div>
         </section>
     </main>
