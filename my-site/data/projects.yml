@@ -2,7 +2,7 @@ projects:
   - title: "My Website!"
     description: "Write-up on my personal website project that is still very much in progress."
     image: "web.png"
-    link: "/blog/test-post"
+    link: "/blog/website"
     tags:
       - name: "HTML"
         class: "tag-html"

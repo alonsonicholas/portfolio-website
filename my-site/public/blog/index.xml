@@ -6,14 +6,14 @@
     <description>Recent content in Blogs on My New Hugo Project</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/blog/test-post/</link>
-      <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/test-post/</guid>
-      <description>&lt;p&gt;This is my first blog post. Here&amp;rsquo;s some content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;a-section-header&#34;&gt;A Section Header&lt;/h2&gt;&#xA;&lt;p&gt;First post&lt;/p&gt;&#xA;&lt;p&gt;Test&lt;/p&gt;</description>
+      <title>My Website!</title>
+      <link>http://localhost:1313/blog/website/</link>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/website/</guid>
+      <description>&lt;h2 id=&#34;welcome-to-my-website&#34;&gt;Welcome to my website!&lt;/h2&gt;&#xA;&lt;p&gt;Hello, as you have probably gathered from the title of this post, this is my new website. I have had a website for a couple of years now but I hadn&amp;rsquo;t really done anything with it and I ended up abandoning it. Part of the reason I abandoned my initial website was because I wasn&amp;rsquo;t very happy using Wordpress to manage my site. Don&amp;rsquo;t get me wrong, Wordpress is an amazing tool, but I felt it too restrictive and clunky to use for what I wanted and I wanted a better solution to manage everything. So I decided to just make my own from the ground up!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
