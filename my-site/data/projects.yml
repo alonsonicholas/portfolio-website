@@ -10,3 +10,15 @@ projects:
         class: "tag-css"
       - name: "Hugo"
         class: "tag-hugo"
+
+  - title: "Homelab"
+    description: "A write-up on my homelab setup and the various services I run on it."
+    image: "homelab.jpg"
+    link: "/blog/homelab"
+    tags:
+      - name: "Proxmox"
+        class: "tag-proxmox"
+      - name: "Docker"
+        class: "tag-docker"
+      - name: "Linux"
+        class: "tag-linux"

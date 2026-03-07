@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "website.md",
+                "file": "homelab.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "website"
+              "title": "homelab"
             }
           }
         ]
@@ -160,6 +160,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -169,5 +170,8 @@
     }
   },
   "active": "48ccc1e6eda1c1dd",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "website.md",
+    "homelab.md"
+  ]
 }

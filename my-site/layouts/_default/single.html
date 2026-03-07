@@ -27,7 +27,7 @@
             </div>
                 <figure>
                 <img class="image-blog" src="/{{ .Params.image }}" alt="Profile Picture" class="profile-pic">
-                <figcaption>This is an image caption</figcaption>
+                <figcaption>{{ .Params.image_caption }}</figcaption>
             </figure>
             {{ .Content }}
           </article>

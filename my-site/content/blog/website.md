@@ -3,6 +3,7 @@ title: My Website!
 date: 2026-02-24
 author: Nicholas Alonso
 image: web900x400.png
+image_caption: Hello there! :)
 ---
 ## Welcome to my website!
 

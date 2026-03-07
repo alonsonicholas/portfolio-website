@@ -451,6 +451,27 @@ footer {
     border-radius: 5px;
     border: #fff 1px solid;
 }
+.tag-linux{
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+.tag-proxmox {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
+.tag-docker {
+    text-align: center;
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    border: #fff 1px solid;
+}
 
 .tag-cyber {
     text-align: center;

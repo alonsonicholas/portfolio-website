@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Alonso</title>
+    <link rel="stylesheet" href="/css/style.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="/">Home</a>
+            <a href="/#projects">Projects</a>
+        </nav>
+    </header>
+    <main class="body-blog"> 
+        <article class="article">
+            <h1 class="h1-blog">Homelab</h1>
+            <div class="post-meta">
+                <address class="address">By: <a class="a-address" href="/contact"> <u>Nicholas Alonso</u></a></address>
+                <date class="pub-date">Published on: March 3, 2026</date>
+            </div>
+                <figure>
+                <img class="image-blog" src="/homelab900x400.png" alt="Profile Picture" class="profile-pic">
+                <figcaption>The big one!</figcaption>
+            </figure>
+            <h2 id="the-journey">The Journey</h2>
+<p>My homelab honestly came out of nowhere. I knew that things like self-hosting and homelabs existed but didn&rsquo;t know enough about it to actually start my own, though I loved looking at the hardware and all its blinking lights. So one day while looking into NASes  I just decided to buy a server on eBay alongside 3x4TB Seagate IronWolf HDDs and figure things out later. This was absolutely NOT a smart decision and I did zero research on servers beforehand but within a week I had a (very heavy) HPE DL380P Gen9 at my doorstep. This was the very first time I had ever seen an enterprise-grade server and I had no clue what to do with all the power on it. Honestly, I didn&rsquo;t even know where to put it, this thing was big and heavy! Then I booted it up for the first time and realized this thing is LOUD! Thankfully that was just the boot up process and the noise was much more tolerable after the system booted. My initial plan was just to put it on the floor like a desktop tower but after seeing just how big this server was I realized what a bad idea that was. So I decided to put the server on its side and create a stand out of some scrap pieces of 2x4s and L-shaped pieces of metal from Home Depot. I also bought little felt pads to put on the underside of the 2x4s to protect the floor.</p>
+<p><img src="/serverstand.jpg" alt="Server stand that I made myself"></p>
+<p>This is actually the same stand I use to this day! I am holding out for an actual server rack but due to space and money constraints, this will have to do.</p>
+<p>The first thing I installed on this big heavy server was Ubuntu, since my plan was to use this as a big Minecraft server for me and my friends. Once I actually was in the process of setting this up I realized that I didn&rsquo;t really know how to use Ubuntu and I wanted a way to be able to use some sort of software for my NAS instead of just setting things up manually within Ubuntu. That is when I learned about type 1 hypervisors, specifically TrueNAS Scale. I learned that it was possible to install containers and VMs and that was enough for me, though I had no clue what containers were. After installing it though, I simply didn&rsquo;t like the feel of it and wanted another option that just felt nicer to use and that is when I learned that I could virtualize TrueNAS and use another hypervisor, specifically ESXi.</p>
+<p>When I first used ESXi, I instantly loved everything about it. From the UI to the ease of use of it I thought I hit the holy grail. While the free version had its limitations, none of them would affect me at the moment and I decided to leave the issue for future me. I ran a few things, such as Home Assistant, TrueNAS virtualized, a Minecraft server and I even experimented with a Jellyfin server, though that was a bit of a failure. I decided everything I was going to do on this server would have to follow industry standards, which is what fueled a lot of the decisions I made in how I laid out my VMs, backups, networking, software choices, etc. I learned A LOT during this period of time, namely how much I simply didn&rsquo;t know. I then learned just how much planning goes into future-proofing systems and realized that ESXi directly went against that. Not only was the free license restricting things like clustering and limiting some of my hardware, but this was at the time that Broadcom started making changes to their licenses, and while I didn&rsquo;t know if I was directly affected I realized just how easily it was for a single decision by a company to affect everything I was doing, so I made the change to open-source.</p>
+<h2 id="the-proxmox-era">The Proxmox Era</h2>
+<p>I heard multiple people speaking about Proxmox and how it was vastly superior to ESXi but I loved using ESXi and I wanted to follow industry standards so I could get the hands-on knowledge. So when i was forced to switch off of ESXi I was pretty bummed. Proxmox in comparison was CONFUSING to use. The drop down menu took me hours to wrap me head around how it worked, and the general feel and look of Proxmox compared to ESXi just felt inferior in every way. Did I really care about clustering and my hardware being limited that much, should I just accept Broadcom&rsquo;s licensing agreements and hope I don&rsquo;t get too badly affected? I decided to just stop complaining and give it a fair shot for a week or so and see how things went. I also decided that it would probably also be a good idea to actually read the documentation and do some research into it, but who actually does that right? For the sake of brevity, I won&rsquo;t get into too much detail about the trials I went through in understanding Proxmox but after a bit of time I finally got the hang of using it and just accepted that it wasn&rsquo;t as nice as ESXi. I experimented with tons of docker containers at the time, most of them I didn&rsquo;t end up keeping or even setting up and I honestly didn&rsquo;t know what I wanted to do with my homelab. I was busy with college and work and the switch to Proxmox killed some of my motivation and I really didn&rsquo;t know what I wanted anymore. I thought maybe it would be good to cut my losses, sell my server, and go in another direction completely.</p>
+<p>Instead I decided to just sit on it and I started instead playing with pfSense. I managed to get my hands on a bunch of old computers and I frankenstein&rsquo;d the pieces into one computer and got a decently powered computer that I had nothing to do with, I already have a strong server after all. So I decided to buy a NIC, throw pfSense on it and replace my router with it. This was simultaneously the most frustrating, but fun thing I&rsquo;ve ever learned. Now at the time I lived with my entire family who obviously depended on the network being up during the day, so if I actually wanted to implement anything I had to do it late at night when everyone was asleep. This led to me running into many issues of my network simply not working that I had to diagnose and fix from 12AM - 3AM. I unfortunately didn&rsquo;t know the tried and true rule of &ldquo;It&rsquo;s always DNS&rdquo; so it took me an entire week to get my network in a functional way but after the struggle it FINALLY worked. I experimented with many things such as SIEMs, IDSes (snort), revamping my network wide adblocker, learned of concepts like DHCP, DNS, and how a router was actually made up of many different pieces and not necessarily just one box that does everything. This reignited my love for IT and Cybersecurity and gave much more purpose to my Proxmox server, but when my NIC ended up dying and I simply didn&rsquo;t have the money to replace it, I was forced to give up on the project. I tried different ideas like using openWRT on a Raspberry Pi, virtualizing pfSense on my server and a couple other probably dumb ideas, but many things stood in the way of each idea and I was forced to abandon it. My homelab ended up low on the priorities list as I finished up and graduated college and it was time to start thinking about university.</p>
+<p>After my move to Tallahassee (Go Noles!), I decided to revamp my lab from the ground up, this lab has been a long time in the making and I would say this is the very first time that it&rsquo;s actually able to be used in any meaningful way. I&rsquo;ve had my lab for about 3 years now and the lessons I&rsquo;ve learned in that time has easily surpassed any classroom or online class I&rsquo;ve ever taken. Enough of the backstory though, what&rsquo;s actually in my lab?</p>
+<h2 id="the-lab">The Lab</h2>
+<p><img src="/homelabdiagram.png" alt="Diagram showing my current homelab setup"></p>
+<p>I run a variety of services, but my focus is on things that I can actually use and making sure to set things up fully before moving on to the next service. This makes it easier for me to see a project through to completion, though admittedly sometimes I find a shiny app that I can&rsquo;t help but put everything to the side. I&rsquo;ll put all my services below in no particular order and describe what I use them for.</p>
+<p>For context, at my current apartment the internet is provided to me and I have no access to my router settings or an access point, so I had to get creative with some of my solutions. I use a TP-Link wifi repeater that really just works to get ethernet into my apartment since I don&rsquo;t have ethernet anywhere at all. The wifi is also surprisingly fast, much faster than my apartment&rsquo;s own network so it worked out pretty well.</p>
+<ul>
+<li>
+<p><strong>Tailscale:</strong> Now while this isn&rsquo;t necessarily hosted by me, I use Tailscale to access all my services externally without the need for port forwarding. It is by far the most important part of my setup due to the fact that I can work on my lab from anywhere. I also have an exit node setup at my old home in Homestead so that I can continue to access and manage the Home Assistant instance there. Tailscale also works alongside Adguard and Nginx to allow myself to use domain names instead of having to memorize the IP and port number of each service of mine. I had to do this since I have no access to my router settings and I didn&rsquo;t want to run an instance of OPNSense since I didn&rsquo;t want to deal with being double NATted. Due to how many services I run, and for future proofing sake, I have a dedicated Debian VM with Tailscale installed that advertises subnet routes. This means that I don&rsquo;t need to install Tailscale on every single device that runs a service now or in the future. If I spin up a new service, it&rsquo;s as simple as creating the proxy host in Nginx and I&rsquo;m good to go!</p>
+</li>
+<li>
+<p><strong>Searxng:</strong> This started off as an experiment that stuck around, I wanted to get into de-googling as much as I could and Searxng is the first step in that. There are other privacy focused search engines out there, but they&rsquo;re run by companies that you just have to trust that they&rsquo;ll stick to their word and keep your data private, running my own instance of Searxng ensures that I&rsquo;m in charge of my data. While I&rsquo;m sure it&rsquo;s possible to still be profiled since I&rsquo;m the only user on my instance, making it hard is a win in my book. I also know that my data stays under my control.</p>
+</li>
+<li>
+<p><strong>Nginx Proxy Manager:</strong> I touched on this on the Tailscale section and it is pretty self-explanatory, but Nginx is used to reverse proxy traffic and allow myself to use domain names on for my services, as well as using a LetsEncrypt certificate so that I can take advantage of HTTPS. Some services like Vaultwarden require this.</p>
+</li>
+<li>
+<p><strong>Adguard:</strong> I solely use Adguard to create a DNS rewrite that points to my Nginx service for reverse proxying. I previously used Pi-Hole for this but for some reason it just didn&rsquo;t want to work for me and Adguard worked without issue.</p>
+</li>
+<li>
+<p><strong>Vikunja:</strong> Vikunja is an app that I haven&rsquo;t seen be talked about too much, but this is my main &ldquo;Project/Task organizer&rdquo;. It&rsquo;s really just fancy to-do lists but I wasn&rsquo;t happy with any of the apps available out there like ToDoist or any similar apps. I tried using Notion since I&rsquo;ve heard raving reviews about it but I couldn&rsquo;t help but feel that it was extremely clunky to use, and once again I wasn&rsquo;t in control of my data. Vikunja has served my needs perfectly fine and is plenty powerful for what I want.</p>
+</li>
+<li>
+<p><strong>Vaultwarden:</strong> This is one of the newest additions to my lab, I actually used to just pay for Bitwarden due to it being extremely cheap and just working with no hassle. I haven&rsquo;t heard of Bitwarden having any data breaches either unlike other password managers that I won&rsquo;t name. I really just decided to host it myself simply because I could and I figured I might as well save the money, but Bitwarden is amazing and I love using it.</p>
+</li>
+<li>
+<p><strong>Bookstack:</strong> This is meant to serve as my own personal wiki. Really I intended for it to be the main source of documentation of my lab since I have run into the same issue several times and always forgotten how to fix it, this is meant to document such issues as well as just general documentation. I haven&rsquo;t used it as much as I would like to, but like the rest of my lab, it&rsquo;s a work in progress.</p>
+</li>
+<li>
+<p><strong>TrueNAS:</strong> This is one of the most important things I run, this is where all of my virtual machines, LXCSs, docker containers, etc live at. I have a 128GB SSD simply for Proxmox to boot off of and everything else is stored onto my NAS. I then backup this NAS to Backblaze for a 2-2-1 solution. I have a cloud sync task that runs daily and copies my VMs and other general files onto Backblaze. I previously used it to run a Jellyfin for my media, but that project is on a long-term hiatus.</p>
+</li>
+<li>
+<p><strong>Portainer:</strong> I use this to manage all my docker containers, while I get a command line is generally superior, I don&rsquo;t like to live in it and Portainer is nice and simple to use while also being capable of doing everything I can do in the command line.</p>
+</li>
+<li>
+<p><strong>AMP:</strong> AMP is a game management panel that is capable of managing servers for several games. I went with AMP over Pterodactyl simply because when I was looking for a management panel Pterodactyl was too complicated for me to setup and AMP is just a script. I previously ran this virtualized on Proxmox, but due to the VMs being stored on my NAS I ran into a lot of issues regarding world generation that would cause the server to slow and crash. I could have stored it on my SSD that Proxmox boots off of but since I&rsquo;m not sure how much space the world would take up I just decided to move it to its own dedicated machine with an SSD in it. The difference was night and day and I still have enough resources to run another modded server alongside it if I want or a Vanilla server. This server is just for me and a couple friends and I had them install Tailscale and shared my system to them so they can access it, since I can&rsquo;t port forward.</p>
+</li>
+</ul>
+<h3 id="lesser-used-service">Lesser Used Service</h3>
+<p>These next couple of services I haven&rsquo;t fully setup but I know what I&rsquo;d like to do with them.</p>
+<ul>
+<li>
+<p><strong>Wallos:</strong> This is an app that is meant to help you manage your money, I&rsquo;m not a big fan of connecting external services like RocketMoney to my bank account since I once again have to trust them. I don&rsquo;t know enough about how third-party applications work with bank accounts so I&rsquo;d rather keep that under my control. I have yet to actually use it but it has a nice UI and looks nicely developed.</p>
+</li>
+<li>
+<p><strong>Uptime-Kuma</strong>: This is another self-explanatory service, I just want this to monitor my services and make sure everything is up and running as it should be.</p>
+</li>
+<li>
+<p><strong>Grafana</strong>: Grafana is solely meant to have nice data to look at for me to be honest. I plan on having graphs for system monitoring and have it nice graphs on my screen. I did come up with an actual useful use-case though which involves Google Business data. I help manage my dad&rsquo;s company that uses Google My Business. The problem though is that Google only stores the data for Google My Business for 6 months at a time, my plan is to download this data every month so that I can monitor business trends over time and not have that data lost to time.</p>
+</li>
+<li>
+<p><strong>Homepage:</strong> Nice homepage for all my services, haven&rsquo;t set it up yet since that would take a bit of time that I need to dedicate to setting other things up.</p>
+</li>
+</ul>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<p>My lab has been a vital learning tool in my IT/Cybersecurity journey. I have learned so many things that if I were to outline everything in this post it would probably be double the size it already is. I&rsquo;ve struggled, broken many things, started over from scratch from a broken installation more times than I can count, but it was all essential in obtaining the knowledge I have now. IT is a complicated field, and there are so many things that you just can&rsquo;t learn in a textbook or classroom. Some things require just building something, breaking it, and trying to put it back together and that is the entire point of my lab. It also serves as a good way to reflect on my journey and look back on how much I&rsquo;ve learned. When I started my lab, if you told me about things like DNS, DHCP, Docker, LXCs, I probably would have looked at you like you were speaking a foreign language. I didn&rsquo;t even know the difference between a modem and a router so the fact I got this far is insane! If anyone reading this is on the fence about starting their own lab, just go for it. Maybe don&rsquo;t jump straight into the deep end and get an enterprise level server like I did, but grab any decent looking computer off of eBay, throw Proxmox on there and go for it. I guarantee you you will learn about ideas and concepts you had no clue existed!</p>
+
+          </article>
+    </main>
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 Nicholas Alonso</p>
+        <div class="footer-socials">
+            <a href="https://x.com/MalformedTech" target="_blank" class="social-icon" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/alonsonicholas" target="_blank" class="social-icon" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/nicholas-alonso-60a010242/" target="_blank" class="social-icon" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <script src="animations.js"></script>
+</body>
+
+</html>

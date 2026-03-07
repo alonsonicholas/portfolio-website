@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on My New Hugo Project</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homelab</title>
+      <link>http://localhost:1313/blog/homelab/</link>
+      <pubDate>Tue, 03 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/homelab/</guid>
+      <description>&lt;h2 id=&#34;the-journey&#34;&gt;The Journey&lt;/h2&gt;&#xA;&lt;p&gt;My homelab honestly came out of nowhere. I knew that things like self-hosting and homelabs existed but didn&amp;rsquo;t know enough about it to actually start my own, though I loved looking at the hardware and all its blinking lights. So one day while looking into NASes  I just decided to buy a server on eBay alongside 3x4TB Seagate IronWolf HDDs and figure things out later. This was absolutely NOT a smart decision and I did zero research on servers beforehand but within a week I had a (very heavy) HPE DL380P Gen9 at my doorstep. This was the very first time I had ever seen an enterprise-grade server and I had no clue what to do with all the power on it. Honestly, I didn&amp;rsquo;t even know where to put it, this thing was big and heavy! Then I booted it up for the first time and realized this thing is LOUD! Thankfully that was just the boot up process and the noise was much more tolerable after the system booted. My initial plan was just to put it on the floor like a desktop tower but after seeing just how big this server was I realized what a bad idea that was. So I decided to put the server on its side and create a stand out of some scrap pieces of 2x4s and L-shaped pieces of metal from Home Depot. I also bought little felt pads to put on the underside of the 2x4s to protect the floor.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>My Website!</title>
       <link>http://localhost:1313/blog/website/</link>
