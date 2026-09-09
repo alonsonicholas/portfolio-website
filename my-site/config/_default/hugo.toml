@@ -1,0 +1,14 @@
+baseURL                = "/"
+locale                 = "en-us"
+title                  = "Nicholas Alonso"
+theme                  = "hugo-theme-stack"
+
+defaultContentLanguage = "en"
+hasCJKLanguage         = false
+
+[pagination]
+    pagerSize = 10
+
+[permalinks]
+    post = "/p/:slug/"
+    page = "/:slug/"

@@ -1,0 +1,51 @@
+{{/*
+    Projects widget — lists the sub-categories nested under a root category
+    (default "Projects") so a project can be picked straight from the homepage.
+
+    Stack's stock `categories` widget can't do this: it uses `.ByCount`, which
+    mislabels nested taxonomy terms (every entry renders as the last child's
+    title). We read `Site.Taxonomies.categories` directly instead, whose keys
+    are the full term paths — "projects", "projects/homelab", … — and keep only
+    the direct children of the root.
+
+    Params:
+        root  Title of the parent category. Default "Projects".
+*/}}
+{{- $context := .Context -}}
+{{- $rootTerm := default "Projects" .Params.root | urlize -}}
+{{- $rootPage := $context.Site.GetPage (printf "/categories/%s" $rootTerm) -}}
+
+{{- if not $rootPage -}}
+    {{- warnf "projects widget: no category page at /categories/%s — create content/categories/%s/_index.md" $rootTerm .Params.root -}}
+{{- else -}}
+    {{/* Direct children only: "projects/homelab" yes, "projects/homelab/dns" no. */}}
+    {{- $prefix := printf "%s/" $rootTerm -}}
+    {{- $children := slice -}}
+    {{- range $term, $taxonomy := $context.Site.Taxonomies.categories -}}
+        {{- if and (hasPrefix $term $prefix) (not (in (strings.TrimPrefix $prefix $term) "/")) -}}
+            {{- with $context.Site.GetPage (printf "/categories/%s" $term) -}}
+                {{- $children = $children | append (dict "page" . "count" (len $taxonomy)) -}}
+            {{- end -}}
+        {{- end -}}
+    {{- end -}}
+
+    <section class="widget archives">
+        <div class="widget-icon">
+            {{ partial "helper/icon" "categories" }}
+        </div>
+        <h2 class="widget-title section-title">
+            <a href="{{ $rootPage.RelPermalink }}">{{ $rootPage.Title }}</a>
+        </h2>
+
+        <div class="widget-archive--list">
+            {{- range sort $children "page.Title" -}}
+                <div class="archives-year">
+                    <a href="{{ .page.RelPermalink }}">
+                        <span class="year">{{ .page.Title }}</span>
+                        <span class="count">{{ .count }}</span>
+                    </a>
+                </div>
+            {{- end -}}
+        </div>
+    </section>
+{{- end -}}

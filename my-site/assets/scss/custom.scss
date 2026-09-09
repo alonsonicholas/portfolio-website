@@ -1,0 +1,19 @@
+/* Site overrides on top of Stack. Imported by the theme's style.scss. */
+
+/* Project contents widget: mark the post the reader is currently on.
+   Note --accent-color is near-white (#ecf0f1) in the dark scheme, so a colour
+   change alone reads as no change; the left bar is what makes it legible. */
+.widget.archives.project-contents {
+    .archives-year.current {
+        background: var(--card-background-selected);
+
+        a {
+            border-left: 3px solid var(--accent-color);
+            padding-left: 22px;
+        }
+
+        span.count {
+            color: var(--card-text-color-secondary);
+        }
+    }
+}

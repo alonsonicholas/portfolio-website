@@ -1,0 +1,50 @@
+{{/*
+    Project contents widget — on a post that belongs to a project sub-category,
+    lists every post in that project in the sticky right sidebar, with the
+    current one marked. Lets a reader jump straight to the part of the project
+    they care about without scrolling to the end of the article.
+
+    Renders nothing on pages that aren't in a project (About, Search, …).
+
+    Params:
+        root  Title of the parent category. Default "Projects".
+*/}}
+{{- $page := .Context -}}
+{{- $rootPage := $page.Site.GetPage (printf "/categories/%s" (urlize (default "Projects" .Params.root))) -}}
+
+{{- $project := false -}}
+{{- with $rootPage -}}
+    {{/* Deepest term under the root, e.g. Projects/Homelab — found via
+         GetTerms so we never have to guess Hugo's term-key slugification. */}}
+    {{- $rootLink := .RelPermalink -}}
+    {{- range $page.GetTerms "categories" -}}
+        {{- if and (hasPrefix .RelPermalink $rootLink) (ne .RelPermalink $rootLink) -}}
+            {{- $project = . -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- with $project -}}
+    {{- $posts := sort .Pages "Date" -}}
+    {{- if gt (len $posts) 1 -}}
+        <section class="widget archives project-contents">
+            <div class="widget-icon">
+                {{ partial "helper/icon" "categories" }}
+            </div>
+            <h2 class="widget-title section-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            <div class="widget-archive--list">
+                {{- range $posts -}}
+                    <div class="archives-year{{ if eq .RelPermalink $page.RelPermalink }} current{{ end }}">
+                        <a href="{{ .RelPermalink }}">
+                            <span class="year">{{ .Title }}</span>
+                            <span class="count">{{ .Date.Format "Jan 2006" }}</span>
+                        </a>
+                    </div>
+                {{- end -}}
+            </div>
+        </section>
+    {{- end -}}
+{{- end -}}

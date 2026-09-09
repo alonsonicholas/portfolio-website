@@ -1,0 +1,50 @@
+mainSections   = ["post"]
+rssFullContent = true
+favicon        = "img/avatar.png"
+
+[footer]
+    since = 2024
+
+[dateFormat]
+    published   = "January 2, 2006"
+    lastUpdated = "January 2, 2006"
+
+[sidebar]
+    compact  = false
+    subtitle = "Documenting my journey with technology — projects, experiments, and what I learned the hard way."
+    avatar   = "img/avatar.png"
+
+[article]
+    headingAnchor = true
+    toc           = true
+    readingTime   = true
+
+    [article.list]
+        showTags = true
+
+# Dark only: `toggle = false` hides the sidebar switcher and forces `default`
+# into localStorage on every load, so light mode is unreachable.
+[colorScheme]
+    toggle  = false
+    default = "dark"
+
+[widgets]
+    homepage = [
+        { type = "search" },
+        { type = "projects", params = { root = "Projects" } },
+        { type = "archives", params = { limit = 5 } },
+        { type = "tag-cloud", params = { limit = 10 } },
+    ]
+    page = [
+        { type = "project-contents", params = { root = "Projects" } },
+        { type = "toc" },
+    ]
+
+[opengraph.twitter]
+    site = "MalformedTech"
+    card = "summary_large_image"
+
+# No comment provider wired up yet — see the theme's
+# themes/hugo-theme-stack/config/_default/params.toml for the available options.
+[comments]
+    enabled = false

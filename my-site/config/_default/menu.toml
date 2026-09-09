@@ -1,0 +1,32 @@
+[[main]]
+    identifier = "projects"
+    name       = "Projects"
+    url        = "/categories/projects/"
+    weight     = -80
+
+    [main.params]
+        icon = "categories"
+
+[[social]]
+    identifier = "github"
+    name       = "GitHub"
+    url        = "https://github.com/alonsonicholas"
+
+    [social.params]
+        icon = "brand-github"
+
+[[social]]
+    identifier = "twitter"
+    name       = "Twitter"
+    url        = "https://x.com/MalformedTech"
+
+    [social.params]
+        icon = "brand-twitter"
+
+[[social]]
+    identifier = "linkedin"
+    name       = "LinkedIn"
+    url        = "https://www.linkedin.com/in/nicholas-alonso-60a010242/"
+
+    [social.params]
+        icon = "brand-linkedin"

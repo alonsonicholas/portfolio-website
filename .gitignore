@@ -1,2 +1,33 @@
-.cpanel.yml
-node_modules
+# Hugo build caches and generated files.
+#
+# Note: my-site/public/ is intentionally NOT ignored — the cPanel deploy
+# publishes it straight from the repo, so the build output must be committed.
+# Run `hugo` in my-site/ and commit the result before pushing.
+my-site/resources/
+my-site/assets/jsconfig.json
+.hugo_build.lock
+
+# Dependencies
+node_modules/
+
+# Editor and OS cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*~
+
+# Scratch files
+*.bak
+*.orig
+
+# Vendored theme: track only what this site actually builds with. The files
+# stay on disk (so the theme folder is complete locally) but are kept out of
+# the repo. Restore from https://github.com/CaiJimmy/hugo-theme-stack if you
+# enable comments or add a language.
+my-site/themes/hugo-theme-stack/i18n/*
+!my-site/themes/hugo-theme-stack/i18n/en.toml
+my-site/themes/hugo-theme-stack/layouts/_partials/comments/provider/
+my-site/themes/hugo-theme-stack/README.md
+my-site/themes/hugo-theme-stack/go.mod
