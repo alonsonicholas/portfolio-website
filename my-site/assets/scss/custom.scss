@@ -17,3 +17,11 @@
         }
     }
 }
+
+/* SVG diagrams (draw.io exports) have transparent backgrounds and dark
+   strokes, which vanish on the dark scheme. Back them like a PNG diagram. */
+.article-content img[src$=".svg"] {
+    background: #fff;
+    border-radius: var(--card-border-radius);
+    padding: 16px;
+}
